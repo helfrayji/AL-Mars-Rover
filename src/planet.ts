@@ -1,8 +1,10 @@
 import { Point } from "./point";
 import { Obstacle } from "./obstacle";
 
+const FULL_CIRCLE_DEGREES: number = 360;
+
 export class Planet {
-    private readonly obstacles: Obstacle[] = [];
+    private readonly obstacles: Obstacle[] = []; 
 
     constructor(public readonly radius: number) {}
 
@@ -15,8 +17,8 @@ export class Planet {
     }
 
     wrapAround(point: Point): Point {
-        const wrappedLongitude = (point.longitude + 360) % 360;
-        const wrappedLatitude = (point.latitude + 360) % 360;
+        const wrappedLongitude = (point.longitude + FULL_CIRCLE_DEGREES) % FULL_CIRCLE_DEGREES;
+        const wrappedLatitude = (point.latitude + FULL_CIRCLE_DEGREES) % FULL_CIRCLE_DEGREES;
         return new Point(wrappedLongitude, wrappedLatitude);
     }
 
