@@ -36,48 +36,48 @@ export class Orientation {
             default: throw new Error('Invalid orientation');
         }
     }
+
+    moveForward(position: Point, planet: Planet): Point {
+        let newPosition = new Point(position.longitude, position.latitude);
+
+        switch (this.value) {
+            case 'N':
+                newPosition = newPosition.incrementLatitude(1);
+                break;
+            case 'E':
+                newPosition = newPosition.incrementLongitude(1);
+                break;
+            case 'S':
+                newPosition = newPosition.DecrementLatitude(1);
+                break;
+            case 'W':
+                newPosition = newPosition.DecrementLongitude(1);
+                break;
+        }
+
+        return planet.wrapAround(newPosition);
+    }
+
+    moveBackward(position: Point, planet: Planet): Point {
+        let newPosition = new Point(position.longitude, position.latitude);
+
+        switch (this.value) { 
+            case 'N':
+                newPosition = newPosition.DecrementLatitude(1);
+                break;
+            case 'E':
+                newPosition = newPosition.DecrementLongitude(1);
+                break;
+            case 'S':
+                newPosition = newPosition.incrementLatitude(1);
+                break;
+            case 'W':
+                newPosition = newPosition.incrementLongitude(1);
+                break;
+        }
+
+        return planet.wrapAround(newPosition);
+    }
 }
 
 type OrientationType = 'N' | 'E' | 'S' | 'W';
-
-export const moveForward = (position: Point, orientation: Orientation, planet: Planet): Point => {
-    let newPosition = new Point(position.longitude, position.latitude);
-
-    switch (orientation.getValue()) {
-        case 'N':
-            newPosition = newPosition.incrementLatitude(1);
-            break;
-        case 'E':
-            newPosition = newPosition.incrementLongitude(1);
-            break;
-        case 'S':
-            newPosition = newPosition.DecrementLatitude(1);
-            break;
-        case 'W':
-            newPosition = newPosition.DecrementLongitude(1);
-            break;
-    }
-
-    return planet.wrapAround(newPosition);
-};
-
-export const moveBackward = (position: Point, orientation: Orientation, planet: Planet): Point => {
-    let newPosition = new Point(position.longitude, position.latitude);
-
-    switch (orientation.getValue()) {
-        case 'N':
-            newPosition = newPosition.DecrementLatitude(1);
-            break;
-        case 'E':
-            newPosition = newPosition.DecrementLongitude(1);
-            break;
-        case 'S':
-            newPosition = newPosition.incrementLatitude(1);
-            break;
-        case 'W':
-            newPosition = newPosition.incrementLongitude(1);
-            break;
-    }
-
-    return planet.wrapAround(newPosition);
-};
