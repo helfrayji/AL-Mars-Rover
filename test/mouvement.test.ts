@@ -5,143 +5,196 @@ import { Rover } from "../src/rover";
 import { Obstacle } from "../src/obstacle";
 
 describe("Rover movements", () => {
-    let planet: Planet;
-    let rover: Rover;
-
-    beforeEach(() => {
-        planet = new Planet(100);
-        rover = new Rover(new Point(0, 0), Orientation.North, planet);
-    });
 
     test("Given rover is facing North when it moves forward then it should move one unit northward", () => {
-
         // Given
-        const initialPosition = new Point(0, 0);
-        rover = new Rover(initialPosition, Orientation.North, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.North)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.moveForward();
+        const movedRover = rover.moveForward();
 
         // Then
-        expect(rover.position).toEqual(new Point(0, 1));
+        expect(movedRover.position).toEqual(new Point(0, 1));
     });
 
     test("Given rover is facing North when it moves backward then it should move one unit southward", () => {
-
         // Given
-        const initialPosition = new Point(0, 0);
-        rover = new Rover(initialPosition, Orientation.North, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.North)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.moveBackward();
+        const movedRover = rover.moveBackward();
 
         // Then
-        expect(rover.position).toEqual(new Point(0, 359));
+        expect(movedRover.position).toEqual(new Point(0, 359));
     });
 
     test("Given rover is facing North when it turns left then it should face West", () => {
-
         // Given
-        const initialOrientation = Orientation.North;
-        rover = new Rover(new Point(0, 0), initialOrientation, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.North)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.turnLeft();
+        const turnedRover = rover.turnLeft();
 
         // Then
-        expect(rover.orientation).toEqual(Orientation.West);
+        expect(turnedRover.orientation).toEqual(Orientation.West);
     });
 
     test("Given rover is facing North when it turns right then it should face East", () => {
-
         // Given
-        const initialOrientation = Orientation.North;
-        rover = new Rover(new Point(0, 0), initialOrientation, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.North)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.turnRight();
+        const turnedRover = rover.turnRight();
 
         // Then
-        expect(rover.orientation).toEqual(Orientation.East);
+        expect(turnedRover.orientation).toEqual(Orientation.East);
     });
 
     test("Given rover encounters an obstacle when it moves forward then it should stay in the same position", () => {
-
         // Given
+        const planet = new Planet(100);
         const obstaclePosition = new Point(0, 1);
         const obstacle = new Obstacle(obstaclePosition);
         planet.addObstacle(obstacle);
-        const initialPosition = new Point(0, 0);
-        rover = new Rover(initialPosition, Orientation.North, planet);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.North)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.moveForward();
+        const movedRover = rover.moveForward();
 
         // Then
-        expect(rover.position).toEqual(initialPosition);
+        expect(movedRover.position).toEqual(new Point(0, 0));
     });
 
     test("Given rover is facing East when it moves forward then it should move one unit eastward", () => {
         // Given
-        const initialPosition = new Point(0, 0);
-        rover = new Rover(initialPosition, Orientation.East, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.East)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.moveForward();
+        const movedRover = rover.moveForward();
 
         // Then
-        expect(rover.position).toEqual(new Point(1, 0));
+        expect(movedRover.position).toEqual(new Point(1, 0));
     });
 
     test("Given rover is facing West when it moves backward then it should move one unit westward", () => {
         // Given
-        const initialPosition = new Point(3, 3);
-        rover = new Rover(initialPosition, Orientation.West, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(3, 3)
+            .facing(Orientation.West)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.moveBackward();
+        const movedRover = rover.moveBackward();
 
         // Then
-        expect(rover.position).toEqual(new Point(4, 3));
+        expect(movedRover.position).toEqual(new Point(4, 3));
     });
 
     test("Given rover is facing South when it turns left then it should face East", () => {
         // Given
-        const initialOrientation = Orientation.South;
-        rover = new Rover(new Point(0, 0), initialOrientation, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.South)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.turnLeft();
+        const turnedRover = rover.turnLeft();
 
         // Then
-        expect(rover.orientation).toEqual(Orientation.East);
+        expect(turnedRover.orientation).toEqual(Orientation.East);
     });
 
     test("Given rover is facing South when it turns right then it should face West", () => {
         // Given
-        const initialOrientation = Orientation.South;
-        rover = new Rover(new Point(0, 0), initialOrientation, planet);
+        const planet = new Planet(100);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.South)
+            .onPlanet(planet)
+            .build();
 
         // When
-        rover = rover.turnRight();
+        const turnedRover = rover.turnRight();
 
         // Then
-        expect(rover.orientation).toEqual(Orientation.West);
+        expect(turnedRover.orientation).toEqual(Orientation.West);
     });
 
 
     test("Given rover encounters an obstacle when it moves backward then it should stay in the same position", () => {
         // Given
+        const planet = new Planet(100);
         const obstaclePosition = new Point(0, 359);
         const obstacle = new Obstacle(obstaclePosition);
         planet.addObstacle(obstacle);
-        const initialPosition = new Point(0, 0);
-        rover = new Rover(initialPosition, Orientation.North, planet);
+        const rover = new RoverBuilder()
+            .atPosition(0, 0)
+            .facing(Orientation.North)
+            .onPlanet(planet)
+            .build();
     
         // When
-        rover = rover.moveBackward();
+        const movedRover = rover.moveBackward();
     
         // Then
-        expect(rover.position).toEqual(initialPosition);
+        expect(movedRover.position).toEqual(new Point(0, 0));
     });
 });
+
+class RoverBuilder {
+    private position: Point = new Point(0, 0);
+    private orientation: Orientation = Orientation.North;
+    private planet!: Planet;
+
+    atPosition(x: number, y: number): this {
+        this.position = new Point(x, y);
+        return this;
+    }
+
+    facing(orientation: Orientation): this {
+        this.orientation = orientation;
+        return this;
+    }
+
+    onPlanet(planet: Planet): this {
+        this.planet = planet;
+        return this;
+    }
+
+    build(): Rover {
+        return new Rover(this.position, this.orientation, this.planet);
+    }
+}
