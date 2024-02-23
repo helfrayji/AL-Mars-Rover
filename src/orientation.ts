@@ -2,43 +2,53 @@ import { Point } from "./point";
 import { Planet } from "./planet";
 
 export class Orientation {
-    static readonly North: Orientation = new Orientation('N');
-    static readonly East: Orientation = new Orientation('E');
-    static readonly South: Orientation = new Orientation('S');
-    static readonly West: Orientation = new Orientation('W');
+    static readonly NORTH: Orientation = new Orientation('N');
+    static readonly EAST: Orientation = new Orientation('E');
+    static readonly SOUTH: Orientation = new Orientation('S');
+    static readonly WEST: Orientation = new Orientation('W');
 
-    private value: OrientationType;
+    private value: string;
 
-    private constructor(value: OrientationType) {
+    private constructor(value: string) {
         this.value = value;
     }
 
-    getValue(): OrientationType {
+    getValue(): string {
         return this.value;
     }
 
     rotateLeft(): Orientation {
         switch (this.value) {
-            case 'N': return Orientation.West;
-            case 'W': return Orientation.South;
-            case 'S': return Orientation.East;
-            case 'E': return Orientation.North;
-            default: throw new Error('Invalid orientation');
+            case 'N':
+                return Orientation.WEST;
+            case 'W':
+                return Orientation.SOUTH;
+            case 'S':
+                return Orientation.EAST;
+            case 'E':
+                return Orientation.NORTH;
+            default:
+                throw new Error('Invalid orientation');
         }
     }
 
     rotateRight(): Orientation {
         switch (this.value) {
-            case 'N': return Orientation.East;
-            case 'E': return Orientation.South;
-            case 'S': return Orientation.West;
-            case 'W': return Orientation.North;
-            default: throw new Error('Invalid orientation');
+            case 'N':
+                return Orientation.EAST;
+            case 'E':
+                return Orientation.SOUTH;
+            case 'S':
+                return Orientation.WEST;
+            case 'W':
+                return Orientation.NORTH;
+            default:
+                throw new Error('Invalid orientation');
         }
     }
 
     moveForward(position: Point, planet: Planet): Point {
-        let newPosition = new Point(position.longitude, position.latitude);
+        let newPosition = new Point(position.getLongitude(), position.getLatitude());
 
         switch (this.value) {
             case 'N':
@@ -59,9 +69,9 @@ export class Orientation {
     }
 
     moveBackward(position: Point, planet: Planet): Point {
-        let newPosition = new Point(position.longitude, position.latitude);
+        let newPosition = new Point(position.getLongitude(), position.getLatitude());
 
-        switch (this.value) { 
+        switch (this.value) {
             case 'N':
                 newPosition = newPosition.DecrementLatitude(1);
                 break;
@@ -79,5 +89,3 @@ export class Orientation {
         return planet.wrapAround(newPosition);
     }
 }
-
-type OrientationType = 'N' | 'E' | 'S' | 'W';
