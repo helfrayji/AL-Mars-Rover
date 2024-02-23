@@ -4,15 +4,15 @@ import { Planet } from "./planet";
 
 export class Rover {
     constructor(
-        public readonly position: Point, 
-        public readonly orientation: Orientation, 
-        public readonly planet: Planet
+        private readonly position: Point,
+        private readonly orientation: Orientation,
+        private readonly planet: Planet
     ) {}
 
     moveForward(): Rover {
         const newPosition = this.orientation.moveForward(this.position, this.planet);
 
-        if (!this.planet.isObstacle(newPosition)) {
+        if (!this.planet.hasObstacleAt(newPosition)) {
             return new Rover(newPosition, this.orientation, this.planet);
         }
 
@@ -22,7 +22,7 @@ export class Rover {
     moveBackward(): Rover {
         const newPosition = this.orientation.moveBackward(this.position, this.planet);
 
-        if (!this.planet.isObstacle(newPosition)) {
+        if (!this.planet.hasObstacleAt(newPosition)) {
             return new Rover(newPosition, this.orientation, this.planet);
         }
 
@@ -37,5 +37,13 @@ export class Rover {
     turnRight(): Rover {
         const newOrientation = this.orientation.rotateRight();
         return new Rover(this.position, newOrientation, this.planet);
+    }
+
+    getPosition(): Point {
+        return this.position;
+    }
+
+    getOrientation(): Orientation {
+        return this.orientation;
     }
 }
