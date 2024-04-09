@@ -7,16 +7,11 @@ import { Rover } from './rover';
 const PORT = 2000;
 
 const server = net.createServer(socket => {
-    console.log('Rover connected');
-
-    const planet = new Planet(100);  
-    let rover = new Rover(new Point(0, 0), Orientation.North, planet);  
+    const planet = new Planet(100);
+    let rover = new Rover(new Point(0, 0), Orientation.North, planet);
 
     socket.on('data', data => {
-        const command = data.toString().trim();  
-        console.log('Received command:', command);
-
-         
+        const command = data.toString().trim();
         switch (command) {
             case 'F':
                 rover = rover.moveForward();
@@ -33,8 +28,6 @@ const server = net.createServer(socket => {
             default:
                 console.log('Invalid command');
         }
-
-         
         socket.write(JSON.stringify(rover.position));
     });
 

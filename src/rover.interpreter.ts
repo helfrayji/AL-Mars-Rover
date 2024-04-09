@@ -6,13 +6,13 @@ import { Planet } from "./planet";
 export class RoverInterpreter {
     public static Interpreter(commande: string, rover: Rover): Rover {
         for (let lettre of commande) {
-            if (lettre === "A")
+            if (lettre === "F")
                 rover = rover.moveForward();
-            else if (lettre === "R")
+            else if (lettre === "B")
                 rover = rover.moveBackward();
-            else if (lettre === "G")
+            else if (lettre === "L")
                 rover = rover.turnLeft();
-            else if (lettre === "D")
+            else if (lettre === "R")
                 rover = rover.turnRight();
         }
 

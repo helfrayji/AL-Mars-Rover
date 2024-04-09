@@ -10,13 +10,13 @@ var RoverInterpreter = /** @class */ (function () {
     RoverInterpreter.Interpreter = function (commande, rover) {
         for (var _i = 0, commande_1 = commande; _i < commande_1.length; _i++) {
             var lettre = commande_1[_i];
-            if (lettre === "A")
+            if (lettre === "F")
                 rover = rover.moveForward();
-            else if (lettre === "R")
+            else if (lettre === "B")
                 rover = rover.moveBackward();
-            else if (lettre === "G")
+            else if (lettre === "L")
                 rover = rover.turnLeft();
-            else if (lettre === "D")
+            else if (lettre === "R")
                 rover = rover.turnRight();
         }
         return rover;

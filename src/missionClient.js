@@ -6,9 +6,10 @@ var HOST = 'localhost';
 var client = new net.Socket();
 client.connect(PORT, HOST, function () {
     console.log('Connected to rover server');
-    client.write('F');
-    client.write('R');
-    client.write('F');
+    process.stdin.on('data', function (data) {
+        var command = data.toString().trim();
+        client.write(command);
+    });
 });
 client.on('data', function (data) {
     var position = JSON.parse(data.toString());
