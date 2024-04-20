@@ -1,8 +1,8 @@
-import { Point } from "../src/point";
-import { Orientation } from "../src/orientation";
-import { Planet } from "../src/planet";
-import { Rover } from "../src/rover";
-import { Obstacle } from "../src/obstacle";
+import { Point } from "../src/domain/point";
+import { Orientation } from "../src/domain/orientation";
+import { Planet } from "../src/conf/planet";
+import { Rover } from "../src/domain/rover";
+import { Obstacle } from "../src/domain/obstacle";
 
 describe("Rover movements", () => {
 

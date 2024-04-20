@@ -1,5 +1,5 @@
 import { Point } from "./point";
-import { Planet } from "./planet";
+import { Planet } from "../conf/planet";
 
 export class Orientation {
     static readonly North: Orientation = new Orientation('N');

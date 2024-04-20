@@ -1,5 +1,5 @@
-import { Point } from "./point";
-import { Obstacle } from "./obstacle";
+import { Point } from "../domain/point";
+import { Obstacle } from "../domain/obstacle";
 
 const FULL_CIRCLE_DEGREES: number = 360;
 

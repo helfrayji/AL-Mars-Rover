@@ -1,6 +1,6 @@
 import { Point } from "./point";
 import { Orientation } from "./orientation";
-import { Planet } from "./planet";
+import { Planet } from "../conf/planet";
 
 export class Rover {
     constructor(
