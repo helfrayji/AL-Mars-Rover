@@ -1,0 +1,43 @@
+# Fichiers générés par l'environnement de développement
+/node_modules
+/dist
+/.vscode
+
+# Fichiers de configuration spécifiques à l'utilisateur
+/.env
+/.env.local
+
+# Fichiers de sauvegarde automatique
+*.bak
+*.swp
+*.swo
+
+# Fichiers de logs
+/logs
+
+# Fichiers de dépendances spécifiques à un système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Fichiers de build
+/build
+
+# Fichiers de cache
+/.cache
+
+# Fichiers de documentation générés
+/docs
+
+# Fichiers de tests générés
+/coverage
+
+# Fichiers de sauvegarde
+*.backup
+*.bak
+*.tmp
+*.old
+*.log
+
+# Fichiers de données sensibles
+/credentials.json
+/secrets.json
