@@ -48,5 +48,5 @@ Le code est écrit en TypeScript et se compose de deux parties principales :
 
 ## Auteurs
 - SKALLI BOUAZIZA ILIES
-- EL FRAYI HIBA 
+- EL FRAYJI HIBA 
 - JULIERON MARCEAU
