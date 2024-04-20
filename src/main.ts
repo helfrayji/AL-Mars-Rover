@@ -1,8 +1,8 @@
-import { Point } from "./point";
-import { Orientation } from "./orientation";
-import { Planet } from "./planet";
-import { Rover } from "./rover";
-import { Obstacle } from "./obstacle";
+import { Point } from "./domain/point";
+import { Orientation } from "./domain/orientation";
+import { Planet } from "./conf/planet";
+import { Rover } from "./domain/rover";
+import { Obstacle } from "./domain/obstacle";
 
 const planet = new Planet(100);
 let rover = new Rover(new Point(0, 0), Orientation.North, planet);
