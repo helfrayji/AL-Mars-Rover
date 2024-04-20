@@ -18,7 +18,7 @@ Le code est écrit en TypeScript et se compose de deux parties principales :
 ## Installation
 1. Accédez au répertoire du projet :
    ```
-   cd mars-rover
+   cd AL-Mars-Rover
    ```
 2. Installez les dépendances nécessaires en exécutant la commande suivante :
    ```
