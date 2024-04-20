@@ -26,11 +26,11 @@ Le code est écrit en TypeScript et se compose de deux parties principales :
    ```
 
 ## Utilisation
-- Pour démarrer le serveur de contrôle du rover, ouvrez un terminal PowerShell et exécutez la commande suivante :
+- Pour démarrer le serveur de contrôle du rover, accédez au répertoire src/reseau/ dans un terminal PowerShell et exécutez la commande suivante :
   ```
   ts-node roverServer.ts
   ```
-- Pour démarrer le client de mission, ouvrez un autre terminal PowerShell et exécutez la commande suivante :
+- Pour démarrer le client de mission, accédez au répertoire src/control-mission/ dans un autre terminal PowerShell et exécutez la commande suivante :
   ```
   ts-node missionClient.ts
   ```
