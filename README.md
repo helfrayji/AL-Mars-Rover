@@ -17,6 +17,7 @@ Pour tourner à gauche, utilisez la lettre L.
 
 Installation
 Accédez au répertoire du projet :
+
 cd mars-rover
 
 Installez les dépendances nécessaires en exécutant la commande suivante :
