@@ -3,7 +3,7 @@ Mars Rover
 Concept
 Le Mars Rover est un programme simulant le déplacement d'un rover sur la surface de Mars. Le rover peut être contrôlé à distance pour explorer différentes régions de la planète.
 
-Fonctionnement dans le code
+Fonctionnement dans le code.
 Le code est écrit en TypeScript et se compose de deux parties principales :
 
 Serveur de contrôle du rover : Ce serveur écoute les commandes envoyées depuis le client de mission et contrôle le déplacement du rover en fonction de ces commandes.
