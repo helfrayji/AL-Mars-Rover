@@ -1,0 +1,15 @@
+<mxfile host="app.diagrams.net" modified="2024-04-24T08:19:19.609Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0" etag="SKF2TC4BcekZOxK7oBEv" version="24.2.8" type="device">
+  <diagram name="Page-1" id="HsJfEJtOVUR4Q3tlChNQ">
+    <mxGraphModel dx="986" dy="793" grid="0" gridSize="10" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="AL-Mars-Rover/&#xa;│&#xa; ├── src/&#xa;│    ├── conf/&#xa;│   │   └── planet.ts&#xa;│   │&#xa;│    ├── domain/&#xa;│   │   ├── obstacle.ts&#xa;│   │   ├── orientation.ts&#xa;│   │   ├── planet.interface.ts&#xa;│   │   ├── point.ts&#xa;│   │   └── rover.ts&#xa;│   │&#xa;│    ├── mission-control/&#xa;│   │   └── missionClient.ts&#xa;│   │&#xa;│    ├── reseau/&#xa;│   │   └── roverServer.ts&#xa;│   │&#xa;│   └── rover-interpreter/&#xa;│       └── rover.interpreter.ts&#xa;│&#xa; ├── tests/&#xa;│   ├── mouvement.test.ts&#xa;│   ├── orientation.test.ts&#xa;│   ├── planet.test.ts&#xa;│   ├── point.test.ts&#xa;│   ├── rover.test.ts&#xa;│   └── roverinterpreter.test.ts&#xa;│&#xa;├── .gitignore&#xa;├── .README.md&#xa;├── jest.config.js&#xa;├── package.json&#xa;└── tsconfig.json" link="AL-Mars-Rover/&#xa;│&#xa;├── src/&#xa;│   ├── conf/&#xa;│   │   └── planet.ts&#xa;│   │&#xa;│   ├── domain/&#xa;│   │   ├── obstacle.ts&#xa;│   │   ├── orientation.ts&#xa;│   │   ├── planet.interface.ts&#xa;│   │   ├── point.ts&#xa;│   │   └── rover.ts&#xa;│   │&#xa;│   ├── mission-control/&#xa;│   │   └── missionClient.ts&#xa;│   │&#xa;│   ├── reseau/&#xa;│   │   └── roverServer.ts&#xa;│   │&#xa;│   └── rover-interpreter/&#xa;│       └── rover.interpreter.ts&#xa;│&#xa;├── tests/&#xa;│   ├── mouvement.test.ts&#xa;│   ├── orientation.test.ts&#xa;│   ├── planet.test.ts&#xa;│   ├── point.test.ts&#xa;│   ├── rover.test.ts&#xa;│   └── roverinterpreter.test.ts&#xa;│&#xa;├── .gitignore&#xa;├── .README.md&#xa;├── jest.config.js&#xa;├── package.json&#xa;└── tsconfig.json" id="GU8uhj7_nInUckdfrEhF-1">
+          <mxCell style="text;whiteSpace=wrap;fontSize=15;" vertex="1" parent="1">
+            <mxGeometry x="540" y="21" width="480" height="620" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
